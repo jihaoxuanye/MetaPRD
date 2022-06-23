@@ -67,7 +67,7 @@ If this repo is helpful for your research, please consider citing the paper:
   author={Ji, Haoxuanye and Wang, Le and Zhou, Sanping and Tang, Wei and Zheng, Nanning and Hua, Gang},
   booktitle={ICCV},
   pages={3661--3670},
-  year={2022}
+  year={2021}
 }
 ```
 or

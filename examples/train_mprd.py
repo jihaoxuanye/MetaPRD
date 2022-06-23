@@ -23,8 +23,8 @@ print(os.path.dirname(os.path.abspath(__file__)) + '/..')
 
 from mprd import datasets
 from mprd import models
-from mprd.models.cm import ClusterMemory, mixingContrastiveFeature, RelativeEntropy
-from mprd.trainers import ClusterContrastTrainer
+from mprd.models.cm import Memory, mixingContrastiveFeature, RelativeEntropy
+from mprd.trainers import Trainer
 from mprd.evaluators import Evaluator, extract_features
 from mprd.utils.data import IterLoader
 from mprd.utils.data import transforms as T
@@ -141,7 +141,7 @@ def main_worker(args):
     lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=args.step_size, gamma=0.1)
 
     # Trainer
-    trainer = ClusterContrastTrainer(model)
+    trainer = Trainer(model)
 
     # momentum update the momery which used to mixing the contrastive features (momentum_update_m = True or False)
     momentum_update_m = False
@@ -217,7 +217,7 @@ def main_worker(args):
         del cluster_loader, features
 
         # Create hybrid memory
-        memory = ClusterMemory(model.module.num_features, num_cluster, temp=args.temp,
+        memory = Memory(model.module.num_features, num_cluster, temp=args.temp,
                                momentum=args.momentum, use_hard=args.use_hard,
                                mix_module=mix_hard_contrastive).cuda()
         memory.features = F.normalize(cluster_features, dim=1).cuda()

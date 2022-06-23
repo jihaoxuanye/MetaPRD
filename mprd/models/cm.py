@@ -172,9 +172,9 @@ class mixingContrastiveFeature(nn.Module):
         return pos_protomemory, neg_protomemory, nhard_protomemory, batch_new_positive, batch_new_negative
 
 
-class ClusterMemory(nn.Module, ABC):
+class Memory(nn.Module, ABC):
     def __init__(self, num_features, num_samples, lamb=0.05, temp=0.05, momentum=0.2, use_hard=False, mix_module=None, nce_module=None):
-        super(ClusterMemory, self).__init__()
+        super(Memory, self).__init__()
         self.num_features = num_features
         self.num_samples = num_samples
 

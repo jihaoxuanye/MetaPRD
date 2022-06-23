@@ -3,9 +3,9 @@ import time
 from .utils.meters import AverageMeter
 
 
-class ClusterContrastTrainer(object):
+class Trainer(object):
     def __init__(self, encoder, memory=None, re_crit=None):
-        super(ClusterContrastTrainer, self).__init__()
+        super(Trainer, self).__init__()
         self.encoder = encoder
         self.memory = memory
         self.re_crit = re_crit
