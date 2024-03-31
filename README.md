@@ -75,7 +75,7 @@ or
 @article{ji2022meta,
   title={Meta Pairwise Relationship Distillation for Unsupervised Person Re-identification},
   author={Ji, Haoxuanye and Wang, Le and Zhou, Sanping and Tang, Wei and Zheng, Nanning and Hua, Gang},
-  booktitle={submitted to T-PAMI},
+  booktitle={submitted to T-NNLS},
   year={2022}
 }
 ```
